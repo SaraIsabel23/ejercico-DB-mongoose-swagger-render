@@ -5,6 +5,10 @@ const { dbConnection } = require('./config/config');
 const routes = require('./routes');
 app.use(express.json());
 
+require("dotenv").config();
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use('/', routes);
 
 
